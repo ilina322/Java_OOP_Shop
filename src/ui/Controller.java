@@ -11,11 +11,9 @@ public class Controller implements OnEventListener {
     @Override
     public void onRead(ArrayList<String> resultEmployeesData) {
         dataParser.parseStringsToEmployee(resultEmployeesData);
-
     }
 
     @Override
     public void onWrite() {
-
     }
 }
