@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FileManager {
-    String fileNameRead = "EmployeeData.csv.txt";
-
+    String fileNameRead = "EmployeeData.csv";
     private final OnEventListener eventListener;
 
     public FileManager(OnEventListener eventListener) {
