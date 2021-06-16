@@ -18,7 +18,7 @@ public class EmployeeRepository {
         this.employees = employees;
     }
 
-    public List<Employee> showAllEmployees() {
+    public List<Employee> provideAllEmployees() {
         return employees;
     }
 

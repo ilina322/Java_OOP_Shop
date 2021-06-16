@@ -2,6 +2,18 @@ package ui;
 
 public class PrintMessagesEmployees {
 
+    public void printMessageForLoginEmployeeWithID() {
+        System.out.println("Please enter your ID: ");
+    }
+
+    public void printMessageForLoginEmployeeWithFirstName() {
+        System.out.println("Please enter your first name: ");
+    }
+
+    public void printMessageForLoginEmployeeWithLastName() {
+        System.out.println("Please enter your last name: ");
+    }
+
     public void printMessageSuccessfulLoginEmployee() {
         System.out.println("Welcome");
     }
