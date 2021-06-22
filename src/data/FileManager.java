@@ -2,12 +2,9 @@ package data;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class FileManager {
-    String fileNameRead = "EmployeeData.csv";
+    String fileNameRead = "EmployeeData.csv.txt";
     private final OnEventListener eventListener;
 
     public FileManager(OnEventListener eventListener) {

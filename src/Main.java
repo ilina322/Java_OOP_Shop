@@ -1,9 +1,3 @@
-import data.DataParser;
-import data.EmployeeRepository;
-import data.FileManager;
-import data.OnEventListener;
-import model.Employee;
-import ui.Controller;
 
 public class Main {
     public static void main(String[] args) {

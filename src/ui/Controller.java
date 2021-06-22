@@ -2,6 +2,7 @@ package ui;
 
 import data.DataParser;
 import data.EmployeeRepository;
+import data.FileManager;
 import data.OnEventListener;
 import model.Employee;
 
@@ -14,19 +15,21 @@ public class Controller implements OnEventListener {
     private final ViewListener viewListener = new ViewEmployee();
     PrintMessagesEmployees printMessagesEmployees = new PrintMessagesEmployees();
 
+    public Controller() {
+        FileManager fileManager = new FileManager(this);
+        fileManager.readEmployeesDataFile();
+    }
 
     public void promptForCredentials() {
-        printMessagesEmployees.printMessageForLoginEmployeeWithID();
         Scanner input = new Scanner(System.in);
-
-        printMessagesEmployees.printMessageForLoginEmployeeWithFirstName();
+        printMessagesEmployees.printMessageForLoginEmployeeWithID();
         int employeeID = input.nextInt();
 
-        printMessagesEmployees.printMessageForLoginEmployeeWithLastName();
-        String employeeFirstName = input.nextLine();
+        printMessagesEmployees.printMessageForLoginEmployeeWithFirstName();
+        String employeeFirstName = input.next();
 
         printMessagesEmployees.printMessageForLoginEmployeeWithLastName();
-        String employeeLastName = input.nextLine();
+        String employeeLastName = input.next();
 
         if(checkEmployeeExist(employeeID, employeeFirstName, employeeLastName)) {
             printMessagesEmployees.printMessageSuccessfulLoginEmployee();
