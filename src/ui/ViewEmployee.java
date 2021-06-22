@@ -3,7 +3,7 @@ package ui;
 public class ViewEmployee implements ViewListener{
 
     @Override
-    public void printEmployee(int employeeID, String firstName, String lastName) {
+    public void printEmployee(String firstName, String lastName) {
         System.out.println("Welcome " + firstName + " " + lastName);
     }
 

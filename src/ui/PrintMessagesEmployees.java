@@ -14,10 +14,6 @@ public class PrintMessagesEmployees {
         System.out.println("Please enter your last name: ");
     }
 
-    public void printMessageSuccessfulLoginEmployee() {
-        System.out.println("Welcome");
-    }
-
     public void printMessageWrongLogin() {
         System.out.println("Please try again!");
     }

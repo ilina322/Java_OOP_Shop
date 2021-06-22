@@ -32,10 +32,10 @@ public class Controller implements OnEventListener {
         String employeeLastName = input.next();
 
         if(checkEmployeeExist(employeeID, employeeFirstName, employeeLastName)) {
-            printMessagesEmployees.printMessageSuccessfulLoginEmployee();
+            viewListener.printEmployee(employeeFirstName, employeeLastName);
             printMenu();
         }else{
-            printMessagesEmployees.printMessageWrongLogin();
+            viewListener.printError();
 //            needs return in new choice
         }
     }
