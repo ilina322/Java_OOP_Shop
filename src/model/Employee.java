@@ -1,39 +1,33 @@
 package model;
 
-public class Employee {
-//    employee_id,first_name,last_name,age,salary
+public record Employee(int employeeId,
+                       String firstName,
+                       String lastName,
+                       int age,
+                       double salary) {
 
-    private int employeeID;
-    private String firstName;
-    private String lastName;
-    private int age;
-    private double salary;
-
-    public Employee(int employeeID, String firstName, String lastName, int age, double salary) {
-        this.employeeID = employeeID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.salary = salary;
+    @Override
+    public int employeeId() {
+        return employeeId;
     }
 
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    public String getFirstName() {
+    @Override
+    public String firstName() {
         return firstName;
     }
 
-    public String getLastName() {
+    @Override
+    public String lastName() {
         return lastName;
     }
 
-    public int getAge() {
+    @Override
+    public int age() {
         return age;
     }
 
-    public double getSalary() {
+    @Override
+    public double salary() {
         return salary;
     }
 }

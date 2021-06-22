@@ -1,5 +1,4 @@
-import data.FileManager;
-import data.OnEventListener;
+import ui.Controller;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,16 +13,15 @@ public class Main {
      * DO NOT touch main and DO NOT touch others' methods
      * Please delete all code from your method before committing your code
      */
-    public static void testNadq(){
+    public static void testNadq() {
+        
+    }
 
+    public static void testDeni() {
 
     }
 
-    public static void testDeni(){
-
-    }
-
-    public static void testToshi(){
+    public static void testToshi() {
 
     }
 }

@@ -2,13 +2,9 @@ package data;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class FileManager {
     String fileNameRead = "EmployeeData.csv.txt";
-
     private final OnEventListener eventListener;
 
     public FileManager(OnEventListener eventListener) {
@@ -49,7 +45,6 @@ public class FileManager {
             System.out.println("Exception while reading the file was thrown");
             System.out.println(e.getMessage());
         }
-
         return arrayList;
     }
 

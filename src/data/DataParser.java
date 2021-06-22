@@ -1,9 +1,9 @@
 package data;
 
 import model.Employee;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DataParser {
     private static final String SPLIT_REGEX = ",";
@@ -12,7 +12,7 @@ public class DataParser {
 
         List<Employee> employees = new ArrayList<>();
 
-        for (String row: employeeRows) {
+        for (String row: employeeRows.stream().skip(1).collect(Collectors.toList())) {
            Employee currentEmployee = parseRowToEmployee(row);
            employees.add(currentEmployee);
         }
