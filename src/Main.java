@@ -1,4 +1,4 @@
-import ui.Controller;
+import ui.LoginMenu;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,6 +22,8 @@ public class Main {
     }
 
     public static void testToshi() {
+        LoginMenu loginMenu = new LoginMenu();
+        loginMenu.showFirstMenuOptions();
 
     }
 }
