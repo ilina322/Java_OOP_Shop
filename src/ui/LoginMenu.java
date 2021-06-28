@@ -18,8 +18,8 @@ public class LoginMenu {
             byte userChoice = input.nextByte();
             switch (userChoice) {
                 case 1:
-                    Controller controller = new Controller();
-                    controller.promptForCredentials();
+                    ControllerEmployee controllerEmployee = new ControllerEmployee();
+                    controllerEmployee.promptForCredentials();
                     break;
                 case 2:
                     break;

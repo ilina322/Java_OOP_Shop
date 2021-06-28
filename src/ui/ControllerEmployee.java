@@ -5,17 +5,21 @@ import data.EmployeeRepository;
 import data.FileManager;
 import data.OnEventListener;
 import model.Employee;
+import ui.printsForEmployee.PrintMenu;
+import ui.printsForEmployee.PrintMessagesEmployees;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Controller implements OnEventListener {
+public class ControllerEmployee implements OnEventListener {
     private final DataParser dataParser = new DataParser();
     private final ViewListener viewListener = new ViewEmployee();
-    PrintMessagesEmployees printMessagesEmployees = new PrintMessagesEmployees();
+    private final PrintMessagesEmployees printMessagesEmployees = new PrintMessagesEmployees();
+    private final PrintMenu printMenu = new PrintMenu();
+    private final MenuManager menuManager = new MenuManager();
 
-    public Controller() {
+    public ControllerEmployee() {
         FileManager fileManager = new FileManager(this);
         fileManager.readEmployeesDataFile();
     }
@@ -33,14 +37,12 @@ public class Controller implements OnEventListener {
 
         if(checkEmployeeExist(employeeID, employeeFirstName, employeeLastName)) {
             viewListener.printEmployee(employeeFirstName, employeeLastName);
-            printMenu();
+            printMenu.EmployeeMenu();
+            menuManager.chooseOptionFromMenu();
         }else{
             viewListener.printError();
-//            needs return in new choice
+            promptForCredentials();
         }
-    }
-
-    private void printMenu() {
     }
 
     private boolean checkEmployeeExist(int id, String firstName, String lastName) {
