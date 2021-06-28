@@ -37,7 +37,6 @@ public class ControllerEmployee implements OnEventListener {
 
         if(checkEmployeeExist(employeeID, employeeFirstName, employeeLastName)) {
             viewListener.printEmployee(employeeFirstName, employeeLastName);
-            printMenu.EmployeeMenu();
             menuManager.chooseOptionFromMenu();
         }else{
             viewListener.printError();
