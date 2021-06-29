@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ControllerEmployee implements OnEventListener {
+public class EmployeeController implements OnEventListener {
     private final DataParser dataParser = new DataParser();
     private final ViewListener viewListener = new ViewEmployee();
     private final PrintMessagesEmployees printMessagesEmployees = new PrintMessagesEmployees();
     private final PrintMenu printMenu = new PrintMenu();
     private final MenuManager menuManager = new MenuManager();
 
-    public ControllerEmployee() {
+    public EmployeeController() {
         FileManager fileManager = new FileManager(this);
         fileManager.readEmployeesDataFile();
     }
