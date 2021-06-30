@@ -1,4 +1,4 @@
-package ui;
+package ui.printsForEmployee;
 
 public class PrintMessagesEmployees {
 
@@ -14,7 +14,7 @@ public class PrintMessagesEmployees {
         System.out.println("Please enter your last name: ");
     }
 
-    public void printMessageWrongLogin() {
+    public void printMessageError() {
         System.out.println("Please try again!");
     }
 
