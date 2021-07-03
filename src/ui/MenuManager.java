@@ -1,8 +1,11 @@
 package ui;
 
+import data.EmployeeRepository;
+import model.Employee;
 import ui.printsForEmployee.PrintMenu;
 import ui.printsForEmployee.PrintMessagesEmployees;
 
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class MenuManager {
@@ -43,6 +46,7 @@ public class MenuManager {
                     break;
                 case 13:
                     printMessagesEmployees.printMessageTypeOfSortingEmployees();
+                    chooseTypeSortingEmployee();
                     break;
                 case 14:
                     loginMenu.showFirstMenuOptions();
@@ -51,4 +55,35 @@ public class MenuManager {
             }
         } while (option != 14);
     }
+
+
+    public void chooseTypeSortingEmployee() {
+        Scanner scanner = new Scanner(System.in);
+        byte option = scanner.nextByte();
+        switch (option) {
+            case 1:
+                sortEmployeeByName();
+                break;
+            case 2:
+                sortEmployeeBySalary();
+                break;
+            default:System.out.println("Choose 1 or 2");
+                chooseTypeSortingEmployee();
+        }
+    }
+
+    private void sortEmployeeBySalary() {
+        EmployeeRepository.getInstance().provideAllEmployees()
+                .stream()
+                .sorted(Comparator.comparing(Employee::salary))
+                .forEach(System.out::println);
+    }
+
+    private void sortEmployeeByName() {
+        EmployeeRepository.getInstance().provideAllEmployees()
+                .stream()
+                .sorted(Comparator.comparing(Employee::firstName))
+                .forEach(System.out::println);
+    }
+
 }
